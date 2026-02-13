@@ -7,24 +7,17 @@
 <body style="margin:0; overflow:hidden;">
   <a-scene embedded arjs>
     
-    <!-- Marker 1: Hiro - Red cube -->
+    <!-- ✅ Hiro marker - WORKS -->
     <a-marker preset="hiro">
       <a-box color="red" position="0 0.5 0"></a-box>
     </a-marker>
 
-    <!-- Marker 2: Kanji - Blue sphere (FIXED) -->
-    <a-marker type="pattern" url="https://upload.wikimedia.org/wikipedia/commons/b/ba/Kanji_marker_ARjs.png">
+    <!-- ✅ Kanji marker - USING PRESET, not URL -->
+    <a-marker preset="kanji">
       <a-sphere color="blue" radius="0.3" position="0 0.5 0"></a-sphere>
     </a-marker>
 
-    <!-- Simple camera -->
     <a-entity camera></a-entity>
   </a-scene>
-
-  <!-- Instructions -->
-  <div style="position: fixed; bottom: 20px; left: 20px; background: black; color: white; padding: 15px;">
-    <p>📱 Hiro marker → Red box</p>
-    <p>📱 Kanji marker → Blue sphere (working now!)</p>
-  </div>
 </body>
 </html>
