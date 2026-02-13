@@ -4,42 +4,27 @@
   <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
 </head>
-
 <body style="margin:0; overflow:hidden;">
   <a-scene embedded arjs>
     
-    <!-- Marker 1: Hiro pattern - Shows a green sphere -->
+    <!-- Marker 1: Hiro - Red cube -->
     <a-marker preset="hiro">
-      <a-sphere position="0 0.5 0" radius="0.3" color="green"></a-sphere>
+      <a-box color="red" position="0 0.5 0"></a-box>
     </a-marker>
 
-    <!-- Marker 2: Kanji pattern - Shows a blue cylinder -->
-    <a-marker preset="kanji">
-      <a-cylinder position="0 0.5 0" radius="0.3" height="0.5" color="blue"></a-cylinder>
-    </a-marker>
-
-    <!-- Marker 3: Custom pattern - Shows multiple objects -->
-    <a-marker type="pattern" url="https://raw.githubusercontent.com/AR-js-org/AR.js/master/aframe/examples/image-training/data/patt/letterA.patt">
-      <!-- Group of objects -->
-      <a-entity position="0 0.5 0">
-        <a-torus position="-0.5 0 0" radius="0.2" radius-tubular="0.05" color="yellow"></a-torus>
-        <a-torus-knot position="0.5 0 0" radius="0.2" color="orange"></a-torus-knot>
-        <a-cone position="0 0.5 0" radius-bottom="0.2" radius-top="0.1" height="0.4" color="purple"></a-cone>
-      </a-entity>
+    <!-- Marker 2: Kanji - Blue sphere (FIXED) -->
+    <a-marker type="pattern" url="https://upload.wikimedia.org/wikipedia/commons/b/ba/Kanji_marker_ARjs.png">
+      <a-sphere color="blue" radius="0.3" position="0 0.5 0"></a-sphere>
     </a-marker>
 
     <!-- Simple camera -->
     <a-entity camera></a-entity>
   </a-scene>
 
-  <!-- Instructions overlay -->
-  <div style="position: fixed; bottom: 20px; left: 20px; background: rgba(0,0,0,0.7); color: white; padding: 15px; border-radius: 8px; font-family: Arial;">
-    <h3>AR.js Simple Demo</h3>
-    <p>📱 Point your camera at:</p>
-    <p>🟢 Hiro marker - Shows green sphere</p>
-    <p>🔵 Kanji marker - Shows blue cylinder</p>
-    <p>🟡 Letter 'A' marker - Shows multiple shapes</p>
-    <p><small>Print markers or display on another device</small></p>
+  <!-- Instructions -->
+  <div style="position: fixed; bottom: 20px; left: 20px; background: black; color: white; padding: 15px;">
+    <p>📱 Hiro marker → Red box</p>
+    <p>📱 Kanji marker → Blue sphere (working now!)</p>
   </div>
 </body>
 </html>
